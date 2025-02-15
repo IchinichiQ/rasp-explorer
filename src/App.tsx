@@ -34,6 +34,7 @@ interface ITheme {
     bgActiveColor: string;
     placeholderColor: string;
     secondaryBgColor: string;
+    themeColor: string;
 }
 
 // fixme absolute cringe
@@ -46,7 +47,8 @@ const themes = {
         bgHoverColor: '#d5d5d5',
         bgActiveColor: '#a2a2a2',
         placeholderColor: '#969696',
-        secondaryBgColor: '#e6e6e6'
+        secondaryBgColor: '#e6e6e6',
+        themeColor: '#e6e6e6'
     } as ITheme,
     [Theme.Dark]: {
         color: '#bbb7b0',
@@ -56,7 +58,8 @@ const themes = {
         bgHoverColor: '#3f3e3e',
         bgActiveColor: '#5b5b5b',
         placeholderColor: '#5b5857',
-        secondaryBgColor: '#232221'
+        secondaryBgColor: '#232221',
+        themeColor: '#232221'
     } as ITheme
 };
 
@@ -137,6 +140,14 @@ function App() {
     const [modalOpen, setModalOpen] = useState(false);
 
     const currentTheme = themes[theme];
+
+    useEffect(() => {
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (metaThemeColor) {
+            metaThemeColor.setAttribute('content', currentTheme.themeColor);
+        }
+    }, [currentTheme]);
+
     return (
         <ThemeProvider theme={currentTheme}>
             <GlobalStyle />
