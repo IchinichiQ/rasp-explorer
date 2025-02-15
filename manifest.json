@@ -2,7 +2,7 @@
   "short_name": "Rasp Explorer",
   "name": "Rasp Explorer",
   "display": "standalone",
-  "start_url": "/",
+  "start_url": ".",
   "icons": [
     {
       "src": "favicon.svg",
