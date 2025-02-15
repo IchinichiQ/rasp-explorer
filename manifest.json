@@ -1,0 +1,13 @@
+{
+  "short_name": "Rasp Explorer",
+  "name": "Rasp Explorer",
+  "display": "standalone",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}
